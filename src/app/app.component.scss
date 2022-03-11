@@ -1,0 +1,202 @@
+// === Variables ===
+$contentWidth: calc(100% - 2 * 240px);
+$columnHeight: calc(100vh - 56px);
+    
+// === Start > GRID - System ===
+.row::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+[class*="col-"] {
+    float: left;
+}  
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+// === End > GRID - System ===
+
+/* === Style the header === */
+.main-header-box {
+    width: 100%;
+    height: 132px;
+    position: fixed;
+    z-index: 5;
+
+    .main-header {
+        background-image: url(../assets/bckgrnd.gif);
+        background-repeat: repeat-x;
+        background-size: auto 110px;
+        background-color: lightblue;
+        height: 110px;
+
+        .logo-left img {
+            width: auto;
+            height: 95px;
+            padding: 16px 0 0 16px;
+        }
+
+        .logo-center {
+            text-align: center;
+            color: #FFF;
+
+            img {
+                width: 90%;
+                height: auto;
+                padding-top: 4px;
+                text-align: center;
+            }
+        }
+    }
+
+    .breadcrumbs-box {
+        background-color: #03c;
+        color: white;
+        height: 22px;
+        font-size: .7rem;
+        padding: 5px 9px 0 9px;
+        border-bottom: 1px solid black;
+
+        .menu {
+            text-align: right;
+        }
+    }
+}
+
+/* === Container for flexboxes === */
+.content-row {
+    display: flex;
+    padding-top: 132px;
+    z-index: -2;
+}
+
+/* Create three unequal columns that sits next to each other */
+.column {
+    padding: 8px;
+}
+
+/* === COLUMN NAVIGATION === */
+.column.navigation {
+    position: fixed;
+    width: 220px;
+    
+    button {
+        width: 204px;
+        margin-bottom: 4px;
+        text-align: left;
+        padding: 6px;
+        border: 1px solid rgb(101, 101, 101);
+        border-radius: 6px;
+    }
+
+    button:hover {
+        // margin-left: 1px;
+        background-color: rgba(0,0,0,0.8);
+        color: white;
+    }
+}
+
+/* COLUMN CONTENT */
+.column.content {
+    z-index: 1;
+    margin-left: 220px;
+    width: $contentWidth;
+    padding-bottom: 44px;
+    
+    .content-header {
+        background-color: #e9e1e1;
+        width: $contentWidth;
+        height: 20px;
+        position: fixed;
+        top: 132px;
+    }
+
+    .content-header2 {
+        background-color: #c7c0c0;
+        width: $contentWidth;
+        height: 60px;
+        border: 1px solid rgb(155, 155, 155);
+        border-radius: 8px;
+        padding: 8px;
+        position: fixed;
+    }
+    
+    .main-content {
+        padding: 8px;
+        padding-top: 68px;
+    }
+}
+
+form {
+
+    > .row {
+        margin-bottom: 6px;
+    }
+
+    label {
+        font-size: .75rem;
+        margin-right: 8px;
+        padding-top: 4px;
+        color: rgb(80, 80, 80);
+    }
+
+    input {
+        width: 100%;
+        height: 24px;
+        border: 1px solid #c7c0c0;
+        border-radius: 4px;
+        padding: 4px;
+    }
+
+    .content-line {
+        // background-color: lime;
+        padding-right: 36px;
+
+        .label {
+            padding-top: 2px;
+        }
+    }
+
+}    
+
+/* COLUMN ADDITIONAL-DATA */
+.column.additional-data {
+    // background-color: antiquewhite;
+    position: fixed;
+    right: 0;
+    width: 220px;
+    text-align: right;
+}
+
+/* Style the footer */
+.footer {
+    background-color: rgb(80, 80, 80);
+    text-align: center;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    border-top: 1px solid rgb(60, 60, 60);
+    z-index: 5;
+    padding: 8px;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
