@@ -50,7 +50,8 @@
             </div>
 
             <div class="content-header2">
-                <span>Maximilian Mustermann</span>
+                <span>{{firstName}} {{lastName}}</span><br>
+                <span style="font-size: .8rem; margin-top: 8px; display: inline-block;">{{shortName}}</span>
             </div>
 
             <!-- === MAIN CONTENT === -->
@@ -64,30 +65,36 @@
                         <div class="col-4 content-line">
                             <div class="row">
                                 <div class="col-3 label">
-                                    <label for="test">ID</label>
+                                    <label for="number">Pers.</label>
                                 </div>
-                                <div class="col-9">
-                                    <input type="text" name="test" placeholder="2163" disabled>
+                                <div class="col-4">
+                                    <input type="text" name="number" value="{{id}}" disabled>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="col-4 content-line">
-                            <div class="row">
-                                <div class="col-3 label">
-                                    <label for="test">Vorname</label>
+                                <div class="col-1">
+                                    <input type="text" name="none" disabled style="border: none">
                                 </div>
-                                <div class="col-9">
-                                    <input type="text" name="test" value="Maximilian">
+                                <div class="col-4">
+                                    <input type="text" name="shortName" value="{{shortName}}" disabled>
                                 </div>
                             </div>
                         </div>
                         <div class="col-4 content-line">
                             <div class="row">
                                 <div class="col-3 label">
-                                    <label for="test">Nachname</label>
+                                    <label for="firstName">Vorname</label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="text" name="test" value="Mustermann">
+                                    <input type="text" name="firstName" [(ngModel)]="firstName">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 content-line">
+                            <div class="row">
+                                <div class="col-3 label">
+                                    <label for="lastName">Nachname</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" name="lastName" [(ngModel)]="lastName">
                                 </div>
                             </div>
                         </div>
@@ -98,35 +105,109 @@
                         <div class="col-4 content-line">
                             <div class="row">
                                 <div class="col-3 label">
-                                    <label for="test">Straße</label>
+                                    <label for="street">Straße</label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="text" name="test" value="Bahnhofstraße">
+                                    <input type="text" name="street" value="Bahnhofstraße">
                                 </div>
                             </div>
                         </div>
                         <div class="col-4 content-line">
                             <div class="row">
                                 <div class="col-3 label">
-                                    <label for="test">Nr.</label>
+                                    <label for="streetNumber">Nr.</label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="text" name="test" value="132">
+                                    <input type="text" name="streetNumber" value="132">
                                 </div>
                             </div>
                         </div>
                         <div class="col-4 content-line">
                             <div class="row">
                                 <div class="col-3 label">
-                                    <label for="test">PLZ</label>
+                                    <label for="postCode">PLZ</label>
                                 </div>
                                 <div class="col-9">
-                                    <input type="text" name="test" value="12345">
+                                    <input type="text" name="postCode" value="12345">
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>                         
+
+                    <!-- === LINE III === -->
+                    <div class="row">
+                        <div class="col-4 content-line">
+                            <div class="row">
+                                <div class="col-3 label">
+                                    <label for="city">Ort</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" name="city" value="Musterstadt">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 content-line">
+                            <div class="row">
+                                <div class="col-3 label">
+                                    <label for="phone">Telefon</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" name="phone" value="05555 / 7364735">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4 content-line">
+                            <div class="row">
+                                <div class="col-3 label">
+                                    <label for="mobile">Mobil</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" name="mobile" value="0150 / 283746456">
                                 </div>
                             </div>
                         </div>                        
                     </div>
-                                        
+
+                    <!-- === LINE IV === -->
+                    <div class="row">
+                        <div class="col-4 content-line">
+                            <div class="row">
+                                <div class="col-3 label">
+                                    <label for="email">E-Mail</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="email" name="email" value="schmidt_m@online.de">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="col-4 content-line">
+                            <div class="row">
+                                <div class="col-3 label">
+                                    <label for="phone">Telefon</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" name="phone" value="05555 / 7364735">
+                                </div>
+                            </div>
+                        </div> -->
+                        <!-- <div class="col-4 content-line">
+                            <div class="row">
+                                <div class="col-3 label">
+                                    <label for="mobile">Mobil</label>
+                                </div>
+                                <div class="col-9">
+                                    <input type="text" name="mobile" value="0150 / 283746456">
+                                </div>
+                            </div>
+                        </div>                         -->
+                    </div>
+                         
+                    
+                    <hr style="margin-top: 12px;">
+
+
+
+
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis unde voluptate sunt, neque ratione mollitia, voluptatem facilis repellendus est beatae modi atque qui asperiores delectus! Quo obcaecati asperiores impedit porro.
@@ -144,5 +225,5 @@
 
 <!-- === FOOTER === -->
 <div class="footer">
-    <h2>Footer</h2>
+    <button type="submit" (click)="onSubmit()">Speichern</button>
 </div>
