@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Partner } from './model/partner';
+import { PartnerService } from './services/partner.service';
 
 @Component({
       selector: 'app-root',
@@ -14,8 +16,14 @@ export class AppComponent implements OnInit {
     lastName: string = "";
     shortName: string = "";
 
+    partners: Partner[] = [];
+
+    constructor (private partnerService: PartnerService) {}
+
     ngOnInit() {
         console.log("onInit");
+        this.partners = this.partnerService.getPartners();
+        console.log(this.partners);
     }
 
     onSubmit(): void {
@@ -26,10 +34,18 @@ export class AppComponent implements OnInit {
             str += this.firstName.slice(0,2);
             str += "01";
 
-            this.shortName = str.toLocaleLowerCase();
+            this.shortName = str.toLocaleLowerCase();            
+        }
+
+        if(this.id == "") {
             this.id = "2393";
         }
+
     }
+
+    // todo
+    
+
 
 }
 

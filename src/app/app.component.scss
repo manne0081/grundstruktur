@@ -109,6 +109,11 @@ $columnHeight: calc(100vh - 56px + 8px);
         background-color: rgba(0,0,0,0.8);
         color: white;
     }
+
+    .active {
+        background-color: rgb(200,200,200);
+        color: black;
+    }
 }
 
 /* COLUMN CONTENT */
@@ -141,7 +146,7 @@ $columnHeight: calc(100vh - 56px + 8px);
         
         .main-content {
             padding: 8px;
-            padding-top: 68px;
+            padding-top: 76px;
         }
     }
 }
@@ -189,21 +194,24 @@ form {
 
 /* Style the footer */
 .footer {
-    background-color: rgb(80, 80, 80);
+    background-color: rgb(60, 60, 60);
     text-align: left;
     color: white;
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 56px;
-    border-top: 1px solid rgb(60, 60, 60);
+    border-top: 1px solid rgb(50, 50, 50);
     z-index: 5;
     padding: 6px;
     padding-left: 220px;
 
     button {
-        padding: 8px 16px;
+        padding: 6px 12px;
         height: 40px;
+        border: 1px solid rgb(40,40,40);
+        // box-shadow: 1px 1px lightblue;
+        border-radius: 8px;
     }
 }
 
